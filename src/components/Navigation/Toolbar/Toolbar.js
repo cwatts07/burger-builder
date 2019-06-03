@@ -5,20 +5,20 @@ import styles from './Toolbar.module.css';
 import Logo from "../../Logo/Logo";
 import NavigationItems from "../NavigationItems/NavigationItems";
 
-const MyComponent = props => {
+const Toolbar = props => {
   return (
     <header className={styles.Toolbar}>
       <div>MENU</div>
       <Logo />
       <nav>
-        <NavigationItems/>
+        <NavigationItems />
       </nav>
     </header>
   );
 };
 
-MyComponent.propTypes = {
+Toolbar.propTypes = {
 
 };
 
-export default MyComponent;
+export default Toolbar;
