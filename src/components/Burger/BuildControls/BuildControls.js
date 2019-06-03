@@ -14,6 +14,7 @@ const controls =[
 const BuildControls = (props) => {
   return (
     <div className={styles.BuildControls}>
+      <p>Current Price: {props.price.toFixed(2)}</p>
       {controls.map(control => (
         <BuildControl
           key={control.label}
@@ -23,6 +24,13 @@ const BuildControls = (props) => {
           disabled={props.disabled[control.type]}
         />
       ))}
+      <button
+        disabled={!props.purchasable}
+        className={styles.OrderButton}
+        onClick={props.openModal}
+      >
+        ORDER NOW
+      </button>
     </div>
   );
 };
@@ -30,7 +38,10 @@ const BuildControls = (props) => {
 BuildControls.propTypes = {
   ingredientAdd: PropTypes.func.isRequired,
   ingredientRemove: PropTypes.func.isRequired,
-  disabled:PropTypes.object
+  disabled:PropTypes.object,
+  price:PropTypes.number,
+  purchasable: PropTypes.bool,
+  openModal: PropTypes.func
 };
 
 export default BuildControls;

@@ -26,6 +26,6 @@ BuildControl.propTypes ={
   added:PropTypes.func.isRequired,
   remove: PropTypes.func.isRequired,
   disabled: PropTypes.bool
-}
+};
 
 export default BuildControl;
