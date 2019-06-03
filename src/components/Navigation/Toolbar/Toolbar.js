@@ -4,11 +4,12 @@ import PropTypes from 'prop-types';
 import styles from './Toolbar.module.css';
 import Logo from "../../Logo/Logo";
 import NavigationItems from "../NavigationItems/NavigationItems";
+import DrawerToggle from "../SideDrawer/DrawerToggle/DrawerToggle";
 
 const Toolbar = props => {
   return (
     <header className={styles.Toolbar}>
-      <div>MENU</div>
+      <DrawerToggle clicked={props.openSideDrawer}/>
       <div className={styles.Logo}>
         <Logo />
       </div>
@@ -20,7 +21,7 @@ const Toolbar = props => {
 };
 
 Toolbar.propTypes = {
-
+  openSideDrawer: PropTypes.func
 };
 
 export default Toolbar;
